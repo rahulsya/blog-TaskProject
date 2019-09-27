@@ -32,6 +32,7 @@
             <div class="card">
                 <div class="card-header"> Tasks</div>
                 <div class="card-body">
+                    <div class="col-md-12"><button class="btn btn-success">Done</button></div>
                     <table class="table table-striped">
                         @foreach ($tasks as $task)
                             <tr>
