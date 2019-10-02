@@ -14,7 +14,8 @@ class TaskContoller extends Controller
      */
     public function index()
     {
-        //
+        //tambahin fitur tabs 
+        
         $tasks=Auth::user()
             ->tasks()
             ->orderBy('is_complete')

@@ -17,7 +17,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="title">Title</label>
-                        <input type="text" id="title" name="title" class="form-control{{$errors->has('title') ? 'is-invalid':''}}" autocomplete="off">
+                        <input type="text" id="title" name="title" class="form-control {{$errors->has('title') ? "is-invalid" : ""}}" autocomplete="off">
                             @if ($errors->has('title'))
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{$errors->first('title')}}</strong>
@@ -32,15 +32,22 @@
             <div class="card">
                 <div class="card-header"> Tasks</div>
                 <div class="card-body">
-                    <div class="col-md-12"><button class="btn btn-success">Done</button></div>
+                        {{-- <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active " href="#" >UnComplete</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Complete</a>
+                            </li>
+                        </ul> --}}
                     <table class="table table-striped">
                         @foreach ($tasks as $task)
                             <tr>
                                 <td>
                                     @if ($task->is_complete)
-                                    <s>{{$task->title}}</s>
+                                        <s>{{$task->title}}</s>
                                     @else
-                                    {{$task->title}}
+                                        {{$task->title}}
                                     @endif
                                 </td>
                                 <td class="text-right">

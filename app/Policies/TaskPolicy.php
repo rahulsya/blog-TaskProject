@@ -21,6 +21,6 @@ class TaskPolicy
     }
 
     public function complete(User $user,Task $task){
-        return $user->is($task->user);
+        return $user->id === $task->user_id;
     }
 }
